@@ -128,16 +128,6 @@ const Predefined: React.FC = () => {
     return null;
   };
  
-  const predefined = () => {
-    setValues({
-      a: '-2',
-      b: '2',
-      n: '100',
-      expression: 'sinh(x)',
-    });
-    setResultTrapezoid(undefined);
-    setResultSimpson(undefined);
-  };
  
 //   const Container = styled('div')`
 //   position: relative;

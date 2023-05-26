@@ -22,7 +22,7 @@ const Userdefined: React.FC = () => {
   });
   const [resultTrapezoid, setResultTrapezoid] = useState<string | undefined>('');
   const [resultSimpson, setResultSimpson] = useState<string | undefined>('');
-  const [showResults, setShowResults] = useState(false); 
+  // const [showResults, setShowResults] = useState(false); 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValues((prevValues) => ({
       ...prevValues,
@@ -100,7 +100,7 @@ const Userdefined: React.FC = () => {
  
     const simpsonResult = (delta / 3) * (fFn.evaluate({ x: parsedA }) / (gFn ? gFn.evaluate({ x: parsedA }) : 1) + fFn.evaluate({ x: parsedB }) / (gFn ? gFn.evaluate({ x: parsedB }) : 1) + sumSimpson);
     setResultSimpson(simpsonResult.toFixed(15));
-    setShowResults(true);
+    // setShowResults(true);
   };
  
   const findDivergentPoint = (a: number, b: number, gFn: any): number | null => {
@@ -126,17 +126,7 @@ const Userdefined: React.FC = () => {
     return null;
   };
  
-  const predefined = () => {
-    setValues({
-      a: '-2',
-      b: '2',
-      n: '100',
-      expression: 'sinh(x)',
-    });
-    setResultTrapezoid(undefined);
-    setResultSimpson(undefined);
-  };
- 
+
 //   const Container = styled('div')`
 //   position: relative;
 //   height: 100vh;
