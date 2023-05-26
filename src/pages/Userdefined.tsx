@@ -22,7 +22,7 @@ const Userdefined: React.FC = () => {
   });
   const [resultTrapezoid, setResultTrapezoid] = useState<string | undefined>('');
   const [resultSimpson, setResultSimpson] = useState<string | undefined>('');
- 
+  const [showResults, setShowResults] = useState(false); 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValues((prevValues) => ({
       ...prevValues,
@@ -100,6 +100,7 @@ const Userdefined: React.FC = () => {
  
     const simpsonResult = (delta / 3) * (fFn.evaluate({ x: parsedA }) / (gFn ? gFn.evaluate({ x: parsedA }) : 1) + fFn.evaluate({ x: parsedB }) / (gFn ? gFn.evaluate({ x: parsedB }) : 1) + sumSimpson);
     setResultSimpson(simpsonResult.toFixed(15));
+    setShowResults(true);
   };
  
   const findDivergentPoint = (a: number, b: number, gFn: any): number | null => {
@@ -201,9 +202,7 @@ const Userdefined: React.FC = () => {
         <Button type="submit" variant="contained" color="primary" sx={{marginBottom: '2rem',marginTop: '2rem',marginLeft: '40%', marginRight: '35%'}}>
           Submit
         </Button>
-        {/* <Button variant="outlined" onClick={predefined} style={{ marginLeft: '10px' }}>
-          Use Predefined Values
-        </Button> */}
+
       </form>
       <Alert severity="info">
       <Typography variant="h6" align="center"  gutterBottom>
