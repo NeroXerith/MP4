@@ -15,10 +15,10 @@ const Userdefined: React.FC = () => {
     };
 
   const [values, setValues] = useState({
-    a: '-1',
-    b: '1',
-    n: '100',
-    expression: 'sinh(x)',
+    a: '',
+    b: '',
+    n: '',
+    expression: '',
   });
   const [resultTrapezoid, setResultTrapezoid] = useState<string | undefined>('');
   const [resultSimpson, setResultSimpson] = useState<string | undefined>('');
