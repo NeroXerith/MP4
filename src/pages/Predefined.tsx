@@ -61,8 +61,8 @@ const Predefined: React.FC = () => {
       const divergentPoint = findDivergentPoint(parsedA, parsedB, gFn);
  
       if (divergentPoint !== null) {
-        setResultTrapezoid(`Math error. Function is not integrable. Root of the denominator exists at ${divergentPoint}.`);
-        setResultSimpson(`Math error. Function is not integrable. Root of the denominator exists at ${divergentPoint}.`);
+        setResultTrapezoid(`Mathematical error: Non-integrable function with a divergent point at ${divergentPoint}.`);
+        setResultSimpson(`Mathematical error: Non-integrable function with a divergent point at ${divergentPoint}.`);
         return;
       }
     }
@@ -78,8 +78,8 @@ const Predefined: React.FC = () => {
         const gi = gFn ? gFn.evaluate({ x: xi }) : 1;
  
         if (!Number.isFinite(fi) || Number.isNaN(fi) || !Number.isFinite(gi) || Number.isNaN(gi) || gi === 0 || gi === Infinity) {
-          setResultTrapezoid('Math error. Integral is divergent.');
-          setResultSimpson('Math error. Integral is divergent.');
+          setResultTrapezoid('Mathematical error: Divergent integral.');
+          setResultSimpson('Mathematical error: Divergent integral.');
           return;
         }
  
