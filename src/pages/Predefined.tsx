@@ -129,16 +129,6 @@ const Predefined: React.FC = () => {
   };
  
  
-//   const Container = styled('div')`
-//   position: relative;
-//   height: 100vh;
-// `;
-//   const BodyContainer = styled('div')`
-//   display: flex;
-//   flex-direction: column;
-//   margin: 150px 20px 20px 20px;
-// `;
- 
   return (
     <>
             <AppBar position="static">
@@ -152,7 +142,7 @@ const Predefined: React.FC = () => {
     <Container maxWidth="sm" sx={{alignItems: 'center', justifyContent: 'center'}}>
  
       <Typography variant="h4" align="center" gutterBottom>
-        PreDefined
+        PreDefinedd
       </Typography>
       <Typography variant="h6" align="center" gutterBottom>
         Sinh(x)
