@@ -193,7 +193,7 @@ const Predefined: React.FC = () => {
               <>
                 <Alert severity="info">
                   <Typography variant="h6" align="center" gutterBottom>
-                  TRAPEZOID METHOD <br></br>Trapezoid Result: {resultTrapezoid !== undefined ? resultTrapezoid : 'undefined'}
+                  TRAPEZOID METHOD <br></br> {resultTrapezoid !== undefined ? resultTrapezoid : 'undefined'}
                   </Typography>
                 </Alert>
                 {resultSimpson !== undefined && (
