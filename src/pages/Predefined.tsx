@@ -142,7 +142,7 @@ const Predefined: React.FC = () => {
     <Container maxWidth="sm" sx={{alignItems: 'center', justifyContent: 'center'}}>
  
       <Typography variant="h4" align="center" gutterBottom>
-        PreDefinedd
+        PreDefined
       </Typography>
       <Typography variant="h6" align="center" gutterBottom>
         Sinh(x)
@@ -197,7 +197,7 @@ const Predefined: React.FC = () => {
                   </Typography>
                 </Alert>
                 {resultSimpson !== undefined && (
-                  <Alert severity="info">
+                  <Alert severity="info"  sx={{marginTop:'1.5rem'}}>
                     <Typography variant="h6" align="center" gutterBottom>
                       Simpson's Result: {resultSimpson}
                     </Typography>

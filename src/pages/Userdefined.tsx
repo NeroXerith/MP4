@@ -22,7 +22,7 @@ const Userdefined: React.FC = () => {
   });
   const [resultTrapezoid, setResultTrapezoid] = useState<string | undefined>('');
   const [resultSimpson, setResultSimpson] = useState<string | undefined>('');
-  // const [showResults, setShowResults] = useState(false); 
+  const [alertVisible, setAlertVisible] = useState(false); // New state variable
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValues((prevValues) => ({
       ...prevValues,
@@ -30,6 +30,12 @@ const Userdefined: React.FC = () => {
     }));
   };
  
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    calculate();
+    setAlertVisible(true);
+  };
+
   const calculate = () => {
     const { a, b, n, expression } = values;
  
@@ -101,7 +107,8 @@ const Userdefined: React.FC = () => {
  
     const simpsonResult = (delta / 3) * (fFn.evaluate({ x: parsedA }) / (gFn ? gFn.evaluate({ x: parsedA }) : 1) + fFn.evaluate({ x: parsedB }) / (gFn ? gFn.evaluate({ x: parsedB }) : 1) + sumSimpson);
     setResultSimpson(simpsonResult.toFixed(15));
-    // setShowResults(true);
+     // Show the alert dialog
+     setAlertVisible(true);
   };
  
   const findDivergentPoint = (a: number, b: number, gFn: any): number | null => {
@@ -142,7 +149,7 @@ const Userdefined: React.FC = () => {
       <Typography variant="h4" align="center" gutterBottom>
         UserDefined
       </Typography>
-      <form onSubmit={(e) => { e.preventDefault(); calculate(); }}>
+      <form onSubmit={handleSubmit}>
         <TextField
           label="Lower Bound (a)"
           variant="filled"
@@ -184,13 +191,13 @@ const Userdefined: React.FC = () => {
         </Button>
 
       </form>
-      <Alert severity="info">
+      <Alert severity="info" sx={{display: alertVisible ? 'flex' : 'none'}}>
       <Typography variant="h6" align="center"  gutterBottom>
         Trapezoid Result: {resultTrapezoid !== undefined ? resultTrapezoid : 'undefined'}
       </Typography></Alert>
       {resultSimpson !== undefined && (
- 
-        <Alert severity="info"><Typography variant="h6" align="center" gutterBottom>
+        
+        <Alert severity="info" sx={{display: alertVisible ? 'flex' : 'none',marginTop:'1.5rem'}}><Typography variant="h6" align="center" gutterBottom >
           Simpson's Result: {resultSimpson}
         </Typography></Alert>
       )}
