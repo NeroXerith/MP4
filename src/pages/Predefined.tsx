@@ -17,9 +17,9 @@ const Predefined: React.FC = () => {
 
 
   const [values, setValues] = useState({
-    a: '-1',
-    b: '1',
-    n: '100',
+    a: '',
+    b: '',
+    n: '',
     expression: 'sinh(x)',
   });
   const [resultTrapezoid, setResultTrapezoid] = useState<string | undefined>('');
