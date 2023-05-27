@@ -193,13 +193,13 @@ const Predefined: React.FC = () => {
               <>
                 <Alert severity="info">
                   <Typography variant="h6" align="center" gutterBottom>
-                    Trapezoid Result: {resultTrapezoid !== undefined ? resultTrapezoid : 'undefined'}
+                  TRAPEZOID METHOD <br></br>Trapezoid Result: {resultTrapezoid !== undefined ? resultTrapezoid : 'undefined'}
                   </Typography>
                 </Alert>
                 {resultSimpson !== undefined && (
                   <Alert severity="info"  sx={{marginTop:'1.5rem'}}>
                     <Typography variant="h6" align="center" gutterBottom>
-                      Simpson's Result: {resultSimpson}
+                    SIMPSON METHOD <br></br> {resultSimpson}
                     </Typography>
                   </Alert>
                 )}
