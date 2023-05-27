@@ -50,8 +50,9 @@ const Userdefined: React.FC = () => {
     }
  
     const delta = (parsedB - parsedA) / parsedN;
-    const fExpression = expression.split('/')[0].trim();
-    const gExpression = expression.split('/')[1]?.trim();
+    const slashIndex = expression.indexOf('/');
+    const fExpression = expression.substring(0, slashIndex).trim();
+    const gExpression = expression.substring(slashIndex + 1).trim();
     const fFn = parse(fExpression).compile();
     const gFn = gExpression ? parse(gExpression).compile() : null;
  
@@ -125,17 +126,6 @@ const Userdefined: React.FC = () => {
  
     return null;
   };
- 
-
-//   const Container = styled('div')`
-//   position: relative;
-//   height: 100vh;
-// `;
-//   const BodyContainer = styled('div')`
-//   display: flex;
-//   flex-direction: column;
-//   margin: 150px 20px 20px 20px;
-// `;
  
   return (
     <>
